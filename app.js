@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const tasks = require('./routers/tasks')
-const connectDB = require('./db/connect')
+const connectDB = require('./db/connect');
+const notFound = require('./middleware/not-found');
 
 // importing credentials in .env file
 require('dotenv').config()
@@ -19,6 +20,8 @@ app.get('/hello', (req, res)=>{
 
 // routes for /api/v1/tasks
 app.use('/api/v1/tasks', tasks)
+
+app.use(notFound)
 
 const start = async ()=>{
 	try {
