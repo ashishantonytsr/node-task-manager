@@ -3,7 +3,6 @@ const app = express();
 const tasks = require("./routers/tasks");
 const connectDB = require("./db/connect");
 const notFound = require("./middleware/not-found");
-const asyncWrapper = require("./middleware/async");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
 // importing credentials in .env file

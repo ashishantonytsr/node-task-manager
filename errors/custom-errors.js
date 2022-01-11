@@ -1,6 +1,6 @@
 class CustomAPIError extends Error {
   constructor(message, statusCode) {
-    super(message);
+    super(message); //pass message to parent class <Error>
     this.statusCode = statusCode;
   }
 }
